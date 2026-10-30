@@ -1,0 +1,98 @@
+/*
+ * Nest design tokens: unica fonte per colori, raggi, ombre, vetro e movimento.
+ * Valori presi dai file in design/ (Main, Questionario, Abbinamento, Piattaforma, Accedi).
+ */
+:root {
+  /* Testo e superfici */
+  --ink: #1d1a38;
+  --ink-hover: #3b3680;
+  --nav: #4a4867;
+  --text-2: #4f4d6b;
+  --text-3: #55536f;
+  --text-4: #3f3d5c;
+  --text-5: #2e2b4d;
+  --placeholder: #6b6986;
+  --bg: #f4f5f9;
+  --white: #ffffff;
+
+  /* Accento (default del design: #2B2660) */
+  --accent: #2b2660;
+  --accent-12: rgba(43, 38, 96, 0.12);
+  --accent-16: rgba(43, 38, 96, 0.16);
+  --accent-70: rgba(43, 38, 96, 0.7);
+
+  /* Pastelli dell’uovo */
+  --lilac: #c6bfff;
+  --peach: #ffc9aa;
+  --mint: #a7e7d4;
+  --orb-base: #e7e4f7;
+  --grad-a: linear-gradient(135deg, #e4e0ff, #ffe1d1);
+  --grad-b: linear-gradient(135deg, #d9f2ea, #e4e0ff);
+  --orb-fill:
+    radial-gradient(circle at 30% 26%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 34%),
+    radial-gradient(circle at 76% 30%, #c6bfff 0%, rgba(198, 191, 255, 0) 54%),
+    radial-gradient(circle at 70% 80%, #ffc9aa 0%, rgba(255, 201, 170, 0) 56%),
+    radial-gradient(circle at 22% 74%, #a7e7d4 0%, rgba(167, 231, 212, 0) 54%), #e7e4f7;
+
+  /* Conferma (prenotazione riuscita) */
+  --success: #23946a;
+  --success-soft: rgba(35, 148, 106, 0.14);
+
+  /* Stati esami */
+  --dot-work: #a9a6c4;
+  --dot-booked: #7fcdb8;
+  --dot-todo: #e3a27f;
+
+  /* Linee e riempimenti tenui */
+  --line-06: rgba(29, 26, 56, 0.06);
+  --line-07: rgba(29, 26, 56, 0.07);
+  --line-08: rgba(29, 26, 56, 0.08);
+  --line-10: rgba(29, 26, 56, 0.1);
+  --line-12: rgba(29, 26, 56, 0.12);
+  --line-14: rgba(29, 26, 56, 0.14);
+  --line-22: rgba(29, 26, 56, 0.22);
+  --line-30: rgba(29, 26, 56, 0.3);
+  --dash: rgba(29, 26, 56, 0.32);
+
+  /* Raggi */
+  --r-pill: 999px;
+  --r-xl: 40px;
+  --r-card: 32px;
+  --r-lg: 28px;
+  --r-panel: 24px;
+  --r-md: 22px;
+  --r-menu: 20px;
+  --r-opt: 18px;
+  --r-input: 16px;
+  --r-sm: 14px;
+  --r-icon: 13px;
+  --r-xs: 12px;
+
+  /* Ombre */
+  --sh-nav: inset 0 1px 0 rgba(255, 255, 255, 0.95), 0 14px 34px -20px rgba(38, 32, 100, 0.3);
+  --sh-card: inset 0 1px 0 #ffffff, 0 44px 90px -40px rgba(38, 32, 100, 0.38), 0 12px 30px -18px rgba(38, 32, 100, 0.2);
+  --sh-panel: inset 0 1px 0 #ffffff, 0 40px 80px -44px rgba(38, 32, 100, 0.38);
+  --sh-soft: inset 0 1px 0 #ffffff, 0 24px 50px -34px rgba(38, 32, 100, 0.3);
+  --sh-float: inset 0 1px 0 #ffffff, 0 20px 40px -24px rgba(38, 32, 100, 0.35);
+  --sh-menu: 0 24px 50px -24px rgba(38, 32, 100, 0.45);
+  --sh-btn: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 10px 22px -12px rgba(29, 26, 56, 0.6);
+  --sh-btn-lg: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 14px 28px -14px rgba(29, 26, 56, 0.6);
+  --sh-icon: 0 8px 18px -12px rgba(38, 32, 100, 0.4);
+  --sh-selected: 0 8px 18px -12px rgba(38, 32, 100, 0.35);
+  --sh-opt-on: 0 0 0 4px var(--accent-12), 0 12px 26px -16px var(--accent-70);
+  --sh-opt-off: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  --focus-ring: 0 0 0 4px rgba(43, 38, 96, 0.12);
+
+  /* Vetro */
+  --glass-nav: rgba(255, 255, 255, 0.62);
+  --glass-card: rgba(255, 255, 255, 0.6);
+  --glass-blur: blur(20px) saturate(170%);
+  --glass-blur-lg: blur(28px) saturate(170%);
+  --glass-border: rgba(255, 255, 255, 0.92);
+
+  /* Movimento */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  /* Tipografia */
+  --font: var(--font-albert), "Albert Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}

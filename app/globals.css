@@ -1,0 +1,417 @@
+@import "../styles/tokens.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--ink-hover);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Pagina: contenitore con sfondo e colonna */
+.page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--ink);
+  overflow-x: clip;
+}
+.page-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Bottoni */
+.btn {
+  transition: transform 0.25s var(--ease), box-shadow 0.3s ease, opacity 0.3s ease;
+}
+.btn:hover {
+  transform: translateY(-1px);
+}
+.btn:active {
+  transform: scale(0.985);
+}
+.btn:disabled {
+  transform: none;
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 26px;
+  border: 0;
+  border-radius: var(--r-pill);
+  background: var(--ink);
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: var(--sh-btn-lg);
+}
+a.btn-primary:hover {
+  color: var(--white);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 52px;
+  padding: 0 22px;
+  border: 1px solid var(--line-14);
+  border-radius: var(--r-pill);
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.btn-sm {
+  min-height: 44px;
+  padding: 0 18px;
+  font-size: 15px;
+}
+
+.btn-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 6px;
+  border: 0;
+  background: none;
+  color: var(--text-3);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(29, 26, 56, 0.06);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+/* Opzioni dei quiz */
+.opt {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 56px;
+  padding: 12px 16px;
+  border-radius: var(--r-opt);
+  border: 1px solid var(--line-10);
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: var(--sh-opt-off);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.3;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.35s ease, transform 0.25s var(--ease);
+}
+.opt:hover {
+  transform: translateY(-1px);
+}
+.opt[aria-pressed="true"] {
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: var(--sh-opt-on);
+}
+.opt-mark {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line-30);
+  color: var(--white);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+.opt-mark-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: transparent;
+  transition: background-color 0.3s ease;
+}
+.opt[aria-pressed="true"] .opt-mark {
+  border-color: var(--accent);
+}
+.opt[aria-pressed="true"] .opt-mark-dot {
+  background: var(--accent);
+}
+.opt-mark-box {
+  border-radius: 6px;
+}
+.opt[aria-pressed="true"] .opt-mark-box {
+  background: var(--accent);
+}
+
+/* Campi */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.field-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-4);
+}
+.input {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 16px;
+  border-radius: var(--r-input);
+  border: 1px solid var(--line-14);
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--ink);
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.input::placeholder {
+  color: var(--placeholder);
+}
+.input:focus {
+  border-color: var(--ink);
+  box-shadow: var(--focus-ring);
+}
+.input[aria-invalid="true"] {
+  border-color: #b4436c;
+}
+
+/* Vetro */
+.glass-card {
+  position: relative;
+  border-radius: var(--r-card);
+  background: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: var(--glass-blur-lg);
+  backdrop-filter: var(--glass-blur-lg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--sh-card);
+}
+
+/* Etichette a pillola */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 12px;
+  border-radius: var(--r-pill);
+  background: rgba(29, 26, 56, 0.06);
+  color: var(--text-4);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Spunta dentro cerchio (accent) */
+.tick {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--white);
+}
+
+/* Menu a tendina in vetro */
+.menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  z-index: 50;
+  width: 240px;
+  padding: 8px;
+  border-radius: var(--r-menu);
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(24px) saturate(170%);
+  backdrop-filter: blur(24px) saturate(170%);
+  border: 1px solid var(--white);
+  box-shadow: var(--sh-menu);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  animation: abFade 0.25s ease both;
+}
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: var(--r-xs);
+  background: transparent;
+  color: var(--ink);
+  font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.menu-item:hover {
+  background-color: rgba(29, 26, 56, 0.05);
+  color: var(--ink);
+}
+.menu-sep {
+  display: block;
+  height: 1px;
+  margin: 4px 10px;
+  background: var(--line-08);
+}
+
+/* Link a piè di pagina */
+.flink {
+  color: var(--text-2);
+  transition: color 0.2s ease;
+}
+.flink:hover {
+  color: var(--ink);
+}
+
+/* Animazioni */
+.anim-in {
+  animation: plIn 0.55s var(--ease) both;
+}
+.anim-rise {
+  animation: plRise 1s var(--ease) both;
+}
+.anim-fade {
+  animation: abFade 0.25s ease both;
+}
+.spin {
+  animation: plSpin 90s linear infinite;
+}
+.spin-r {
+  animation: plSpin 140s linear infinite reverse;
+}
+.spin-slow {
+  animation: plSpin 120s linear infinite;
+}
+.spin-fast {
+  animation: plSpin 24s linear infinite;
+}
+.breathe {
+  animation: plBreathe 11s ease-in-out infinite;
+}
+.drift {
+  animation: plDrift 12s ease-in-out infinite;
+}
+
+@keyframes plRise {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes plIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes abFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes plSpin {
+  to { transform: rotate(360deg); }
+}
+@keyframes plBreathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.035); }
+}
+@keyframes plDrift {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

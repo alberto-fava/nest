@@ -1,0 +1,203 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  padding: 16px 20px 0;
+}
+
+.veil {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: calc(100% + 22px);
+  pointer-events: none;
+  background: rgba(244, 245, 249, 0.45);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  -webkit-mask-image: linear-gradient(180deg, #000 58%, transparent);
+  mask-image: linear-gradient(180deg, #000 58%, transparent);
+}
+
+.nav {
+  /* Come nel design: la larghezza massima esclude padding e bordo. */
+  box-sizing: content-box;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 8px 8px 20px;
+  border-radius: var(--r-pill);
+  background: var(--glass-nav);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: var(--sh-nav);
+}
+.narrow {
+  max-width: 1120px;
+  gap: 16px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+}
+.brandName {
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+
+.divider {
+  width: 1px;
+  height: 22px;
+  background: var(--line-14);
+}
+.section {
+  font-size: 15px;
+  color: var(--text-2);
+  white-space: nowrap;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Menu utente */
+.userWrap {
+  position: relative;
+}
+.userBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 14px 0 6px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--line-10);
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--ink);
+  cursor: pointer;
+}
+.userName {
+  font-size: 15px;
+  font-weight: 500;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.chev {
+  transition: transform 0.25s ease;
+}
+.chevOpen {
+  transform: rotate(180deg);
+}
+.menuHead {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 12px 10px;
+  line-height: 1.35;
+}
+.menuHeadName {
+  font-size: 15px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.menuHeadMail {
+  font-size: 13px;
+  color: var(--text-3);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.menuDanger {
+  color: #8a2f52;
+}
+.menuDanger:hover {
+  color: #8a2f52;
+}
+
+/* Avatar di coppia */
+.avatars {
+  display: flex;
+}
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--grad-a);
+  border: 2px solid var(--white);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.avatar + .avatar {
+  margin-left: -8px;
+  background: var(--grad-b);
+}
+
+/* Piè di pagina compatto */
+.footer {
+  position: relative;
+  z-index: 1;
+  padding: 0 24px 32px;
+}
+.footerInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line-08);
+  font-size: 13px;
+  color: var(--text-3);
+}
+.footerBrand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  font-size: 14px;
+}
+.footerNote {
+  flex-basis: 100%;
+}
+
+@media (max-width: 640px) {
+  .hideSm {
+    display: none !important;
+  }
+}
+@media (max-width: 560px) {
+  .hideXs {
+    display: none !important;
+  }
+}

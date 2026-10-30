@@ -1,0 +1,643 @@
+/* Anteprima dell’area personale nella landing (illustrazione statica). */
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 60px;
+  padding: 0 20px;
+  background: rgba(255, 255, 255, 0.75);
+  border-bottom: 1px solid var(--line-07);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.brandName {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+.sep {
+  width: 1px;
+  height: 20px;
+  background: var(--line-14);
+}
+.area {
+  font-size: 15px;
+  color: var(--text-2);
+  white-space: nowrap;
+}
+.barRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.bell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(29, 26, 56, 0.05);
+  color: var(--ink);
+}
+.bellDot {
+  position: absolute;
+  top: 7px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 2px #ffffff;
+}
+.couple {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.avatars {
+  display: flex;
+}
+.av {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--grad-a);
+  border: 2px solid #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+}
+.av + .av {
+  margin-left: -8px;
+  background: var(--grad-b);
+}
+.coupleName {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.body {
+  display: flex;
+  align-items: stretch;
+}
+.side {
+  flex: 0 0 214px;
+  padding: 18px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-right: 1px solid var(--line-06);
+}
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 42px;
+  padding: 0 12px;
+  border-radius: 12px;
+  color: var(--text-2);
+  font-size: 15px;
+}
+.navOn {
+  background: #ffffff;
+  color: var(--ink);
+  font-weight: 500;
+  box-shadow: var(--sh-selected);
+}
+.navOn svg {
+  color: var(--accent);
+}
+.sideFoot {
+  margin-top: auto;
+  padding-top: 18px;
+  display: flex;
+}
+.specCard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid #ffffff;
+}
+.tiny {
+  font-size: 12px;
+  color: var(--text-3);
+}
+.specRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ini {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--grad-a);
+  font-size: 12px;
+  font-weight: 600;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+.t14 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.main {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.greetRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 4px;
+}
+.greet {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.greetTitle {
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+.greetSub {
+  font-size: 15px;
+  color: var(--text-3);
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid var(--line-14);
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 500;
+}
+.phases {
+  list-style: none;
+  margin: 0;
+  padding: 20px 22px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+.phase {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.phDone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #ffffff;
+}
+.phCur {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.95);
+}
+.phCur span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.phTodo {
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px dashed var(--dash);
+}
+.phText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.t15 {
+  font-size: 15px;
+  font-weight: 500;
+}
+.t13 {
+  font-size: 13px;
+  color: var(--text-3);
+}
+.cols {
+  display: flex;
+  gap: 16px;
+}
+.exams {
+  position: relative;
+  flex: 1.35 1 0;
+  min-width: 0;
+  padding: 22px 24px 10px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+.examsHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 10px;
+}
+.t18 {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.t14m {
+  font-size: 14px;
+  color: var(--text-3);
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line-07);
+}
+.rowText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.t16 {
+  font-size: 16px;
+  font-weight: 500;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.bReady {
+  background: var(--accent);
+  color: #ffffff;
+}
+.bWork {
+  background: #ffffff;
+  border: 1px solid var(--line-22);
+  color: var(--ink);
+}
+.bBooked {
+  background: rgba(29, 26, 56, 0.06);
+  color: var(--text-4);
+}
+.bTodo {
+  border: 1px dashed rgba(29, 26, 56, 0.38);
+  color: var(--text-4);
+}
+.right {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.card {
+  padding: 22px 24px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.card12 {
+  gap: 12px;
+}
+.label14 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-3);
+}
+.visitRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.dateBox {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 68px;
+  border-radius: 18px;
+  background: var(--ink);
+  color: #ffffff;
+  line-height: 1.1;
+}
+.dateSm {
+  font-size: 12px;
+  opacity: 0.8;
+}
+.dateLg {
+  font-size: 24px;
+  font-weight: 500;
+}
+.visitTitle {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+.ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid var(--line-14);
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 500;
+}
+.quote {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-5);
+}
+.from {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-3);
+}
+.ini28 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--grad-a);
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Versione telefono */
+.phone {
+  position: relative;
+  border-radius: 34px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.52);
+  -webkit-backdrop-filter: blur(26px) saturate(170%);
+  backdrop-filter: blur(26px) saturate(170%);
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  box-shadow: inset 0 1px 0 #ffffff, 0 50px 90px -46px rgba(38, 32, 100, 0.45);
+}
+.pBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 56px;
+  padding: 0 16px;
+  background: rgba(255, 255, 255, 0.78);
+  border-bottom: 1px solid var(--line-07);
+}
+.pBrand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pBrandName {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+.pArea {
+  font-size: 14px;
+  color: var(--text-2);
+}
+.pBell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(29, 26, 56, 0.05);
+  color: var(--ink);
+}
+.pBellDot {
+  position: absolute;
+  top: 6px;
+  right: 7px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 2px #ffffff;
+}
+.pBody {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px 16px;
+}
+.pGreet {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0 2px;
+}
+.pGreetTitle {
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+.pCard {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid #ffffff;
+}
+.ring {
+  position: relative;
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+}
+.ringText {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+}
+.pList {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 14px 16px 6px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid #ffffff;
+}
+.pListHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 6px;
+}
+.pRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 0;
+  border-top: 1px solid var(--line-07);
+  font-size: 15px;
+}
+.pBadge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.pDark {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 20px;
+  background: var(--ink);
+  color: #ffffff;
+}
+.op75 {
+  font-size: 12px;
+  opacity: 0.75;
+}
+.pVisit {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.op75b {
+  font-size: 13px;
+  opacity: 0.75;
+}
+.ini40 {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--grad-a);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+}
+.tabbar {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.78);
+  border-top: 1px solid var(--line-07);
+}
+.tabItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 7px 0;
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 500;
+}
+.tabOn {
+  border-radius: 14px;
+  background: rgba(29, 26, 56, 0.06);
+  color: var(--ink);
+  font-weight: 600;
+}
+.tabOn svg {
+  color: var(--accent);
+}
